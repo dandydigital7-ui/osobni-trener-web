@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daniel Holler | Osobní trenér Max Fitness Dejvice, Praha 6</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Profesionální osobní trénink v Dejvicích. Daniel Holler vám pomůže s hubnutím, nabíráním svalů i kondicí díky 20 letům zkušeností z fotbalu, gymnastiky a fitness." />
+  <meta name="keywords" content="osobní trenér Praha 6, fitness Dejvice, hubnutí, nabírání svalové hmoty, kondiční trénink, Daniel Holler, Max Fitness Dejvice" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Daniel Holler | Osobní trenér Max Fitness Dejvice, Praha 6" />
+  <meta property="og:description" content="Profesionální osobní trénink v Dejvicích. 20 let zkušeností z fotbalu, gymnastiky a fitness." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="cs_CZ" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #151515;
+      --surface-2: #1b1b1b;
+      --text: #ffffff;
+      --muted: #b6b6b6;
+      --muted-2: #8f8f8f;
+      --accent: #c24b34; /* muted orange-red */
+      --border: rgba(255, 255, 255, 0.08);
+      --border-2: rgba(255, 255, 255, 0.12);
+      --radius: 10px;
+      --radius-lg: 16px;
+      --transition: 0.18s ease-out;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.18);
+      text-underline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    main {
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 72px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 15, 15, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 16px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.04em;
+      font-family: "Montserrat", system-ui, sans-serif;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #0b0b0b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      box-shadow: none;
+    }
+
+    .brand-text-main {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--muted-2);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 860px) {
+      .nav-cta {
+        display: flex;
+      }
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .nav-toggle-lines {
+      width: 18px;
+      height: 12px;
+      position: relative;
+    }
+
+    .nav-toggle-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      transition: transform var(--transition), top var(--transition), opacity var(--transition);
+    }
+
+    .nav-toggle-lines span:nth-child(1) { top: 0; }
+    .nav-toggle-lines span:nth-child(2) { top: 5px; }
+    .nav-toggle-lines span:nth-child(3) { top: 10px; }
+
+    body.nav-open .nav-toggle-lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+    body.nav-open .nav-toggle-lines span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+    }
+
+    @media (max-width: 859px) {
+      .navbar-inner {
+        padding: 12px 14px;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-mobile {
+        display: block;
+        position: fixed;
+        inset: 56px 0 0;
+        background: rgba(10, 10, 10, 0.92);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition), transform var(--transition);
+      }
+
+      body.nav-open .nav-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .nav-mobile-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 16px 14px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-mobile a {
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.02);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .nav-mobile-cta {
+        margin-top: 10px;
+      }
+
+      .nav-mobile-cta .btn-primary {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+      }
+    }
+
+    /* GENERIC */
+    .section {
+      padding: 64px 0 28px;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .badge strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: none;
+      font-family: "Montserrat", system-ui, sans-serif;
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: none;
+      transform: translateY(0);
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #d0553c;
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: transparent;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.02);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .pill-metric {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: transparent;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: none;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+        gap: 40px;
+      }
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: clamp(34px, 4vw, 46px);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .hero-highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .hero-benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    .hero-benefits span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 380px;
+    }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0b0b0b;
+      min-height: 260px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    /* HERO ATMOSPHERE */
+    .hero {
+      position: relative;
+      padding: 52px 0 40px;
+      background: #050505;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("images/foto-3.png");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.95) contrast(1.05) brightness(0.55);
+      transform: scale(1.02);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.78) 45%, rgba(10, 10, 10, 0.50) 100%),
+        linear-gradient(180deg, rgba(10, 10, 10, 0.62) 0%, rgba(10, 10, 10, 0.88) 100%);
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        padding: 68px 0 56px;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .hero {
+        padding: 32px 0 26px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+        line-height: 1.12;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      .hero-cta-row {
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .hero-cta-row .btn-primary {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+      }
+
+      .pill-metric {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-card {
+        min-height: 320px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .section {
+        padding: 38px 0 20px;
+      }
+
+      .section-header {
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .section-subtitle {
+        font-size: 13px;
+      }
+
+      .cards-grid {
+        gap: 10px;
+      }
+
+      .service-card {
+        padding: 14px 13px 16px;
+      }
+
+      .timeline {
+        margin-top: 4px;
+      }
+
+      .timeline-step {
+        padding: 10px 0 4px;
+      }
+
+      .reasons-list {
+        gap: 8px;
+      }
+
+      .contact-card {
+        padding: 16px 14px 18px;
+      }
+
+      .contact-submit-row {
+        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-submit-row .btn-primary {
+        width: 100%;
+        padding: 13px 16px;
+        text-align: center;
+      }
+    }
+
+    .hero-info-strip {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-info-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-name {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-role {
+      font-size: 11px;
+      color: var(--muted-2);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .metric-pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: transparent;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .metric-pill strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* SECTION 2: O MNĚ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .about-text p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-background-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .about-card {
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      display: block;
+      font-size: 13px;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .about-photo {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .about-photo-inner {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      min-height: 320px;
+      background: #0b0b0b;
+      overflow: hidden;
+    }
+
+    .about-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .about-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(15, 15, 15, 0.92);
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .about-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: none;
+    }
+
+    /* SECTION 3: SLUŽBY */
+    .cards-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 720px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .service-card {
+      border-radius: var(--radius);
+      background: rgba(10, 10, 10, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 16px 16px 18px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 120px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(18, 18, 18, 0.95);
+    }
+
+    .service-icon {
+      display: none;
+    }
+
+    .service-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* SECTION 4: JAK PROBÍHÁ SPOLUPRÁCE */
+    .timeline {
+      border-left: 1px solid rgba(255, 255, 255, 0.10);
+      margin-top: 10px;
+      padding-left: 18px;
+    }
+
+    .timeline-step {
+      position: relative;
+      padding: 14px 0 8px;
+    }
+
+    .timeline-step::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 20px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: none;
+    }
+
+    .timeline-index {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-text {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    /* SECTION 5: PROČ SI VYBRAT MĚ */
+    .reasons-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .reason-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: var(--radius);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .reason-check {
+      margin-top: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .reason-item strong {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    /* SECTION 6: REFERENCE */
+    .testimonials-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    @media (min-width: 860px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .testimonial-card {
+      border-radius: var(--radius);
+      background: rgba(10, 10, 10, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+    }
+
+    .testimonial-name {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .testimonial-age {
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+
+    .quote-mark {
+      display: none;
+    }
+
+    /* SECTION 7: GALERIE */
+    .gallery-section {
+      background: transparent;
+      border-radius: 0;
+      padding: 6px 0 0;
+      border: none;
+      margin-top: 4px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    @media (min-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 960px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #050505;
+      border: none;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.25s ease-out;
+    }
+
+    @media (max-width: 599px) {
+      .gallery-section {
+        padding: 10px 0 6px;
+        border-radius: 0;
+      }
+
+      .gallery-grid {
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .gallery-item {
+        border-radius: 12px;
+      }
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* SECTION 8: LOKALITA */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 860px) {
+      .location-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .location-map {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: #000;
+      box-shadow: var(--shadow);
+      min-height: 260px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(1) contrast(1.05) brightness(0.9);
+    }
+
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 15, 15, 0.45), rgba(15, 15, 15, 0));
+      pointer-events: none;
+    }
+
+    /* SECTION 9: KONTAKT */
+    .contact-section {
+      padding-bottom: 32px;
+    }
+
+    .contact-card {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 18px 16px 20px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+    }
+
+    .field label {
+      color: var(--muted);
+    }
+
+    .field span {
+      font-size: 11px;
+      color: var(--muted-2);
+    }
+
+    .input, .select {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #0b0b0b;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .input::placeholder {
+      color: rgba(176, 176, 176, 0.7);
+    }
+
+    .input:focus,
+    .select:focus {
+      border-color: rgba(194, 75, 52, 0.85);
+      background: #0d0d0d;
+    }
+
+    .select {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #b0b0b0 50%), linear-gradient(135deg, #b0b0b0 50%, transparent 50%);
+      background-position: calc(100% - 14px) calc(50% - 3px), calc(100% - 9px) calc(50% - 3px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+    }
+
+    .contact-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .contact-social {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .insta-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .contact-submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 18px 16px 32px;
+      font-size: 11px;
+      color: var(--muted-2);
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      margin-top: 24px;
+    }
+
+    /* SMALL UTILITIES */
+    .muted {
+      color: var(--muted);
+    }
+
+    .mt-4 {
+      margin-top: 4px;
+    }
+
+    .mt-8 {
+      margin-top: 8px;
+    }
+
+    .mt-12 {
+      margin-top: 12px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    @media (max-width: 599px) {
+      .page-wrap {
+        padding-inline: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="#hero" class="brand">
+        <div class="brand-mark">DH</div>
+        <div>
+          <div class="brand-text-main">Daniel Holler</div>
+          <div class="brand-text-sub">Osobní trenér · Praha 6</div>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Hlavní navigace">
+        <a href="#about">O mně</a>
+        <a href="#services">Služby</a>
+        <a href="#process">Spolupráce</a>
+        <a href="#testimonials">Reference</a>
+        <a href="#location">Lokalita</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Úvodní konzultace zdarma
+        </button>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Otevřít menu" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="nav-toggle-lines" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+    <div id="mobile-nav" class="nav-mobile" aria-label="Mobilní navigace">
+      <div class="nav-mobile-inner">
+        <a href="#about">O mně</a>
+        <a href="#services">Služby</a>
+        <a href="#process">Spolupráce</a>
+        <a href="#testimonials">Reference</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#location">Lokalita</a>
+        <a href="#contact">Kontakt</a>
+        <div class="nav-mobile-cta">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Úvodní konzultace zdarma
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+
+      <!-- SECTION 1: HERO -->
+      <section id="hero" class="section hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Osobní trenér · Max Fitness Dejvice</div>
+            <h1 id="hero-title" class="hero-title">
+              Změňte svou postavu
+              <span class="hero-highlight">pod dohledem profesionála.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Efektivní trénink, individuální přístup a výsledky, které vydrží.
+              Trénujte se mnou v moderním prostředí Max Fitness Dejvice v Praze 6.
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Chci úvodní konzultaci zdarma
+              </button>
+              <div class="pill-metric" aria-hidden="true">
+                <span class="pill-dot"></span>
+                Kapacita tréninků je aktuálně <strong>otevřená</strong>
+              </div>
+            </div>
+
+            <div class="hero-benefits" aria-label="Hlavní důvody proč se mnou">
+              <span><span class="hero-dot"></span> 20+ let sportovní praxe (fotbal, gymnastika, fitness)</span>
+              <span><span class="hero-dot"></span> Důraz na techniku, progres a bezpečné provedení</span>
+              <span><span class="hero-dot"></span> Tréninky v Max Fitness Dejvice · Praha 6</span>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-photo">
+                <img src="images/foto-1.png" alt="Daniel Holler při tréninku" loading="eager" />
+              </div>
+              <div class="hero-info-strip">
+                <div class="hero-info-main">
+                  <div class="hero-name">Daniel Holler</div>
+                  <div class="hero-role">Osobní trenér · Max Fitness Dejvice</div>
+                </div>
+                <div class="hero-metrics">
+                  <div class="metric-pill"><strong>20+</strong> let zkušeností</div>
+                  <div class="metric-pill"><strong>Praha 6</strong> · Dejvice</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: O MNĚ -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="section-header">
+              <div class="section-label">O mně</div>
+              <h2 id="about-title" class="section-title">Trenér, který staví na technice a dlouhodobém progresu.</h2>
+              <p class="section-subtitle">
+                Jmenuji se <strong>Daniel Holler</strong>. Jako certifikovaný instruktor fitness pomáhám lidem objevovat
+                jejich potenciál – ať už jde o první krok k pohybu, nebo posunutí výkonnosti na další úroveň.
+              </p>
+            </div>
+            <p>
+              Věřím v <strong>kvalitní techniku, progresivní přetížení a rovnováhu</strong> mezi tréninkem a regenerací.
+              Cílem není jen „odcvičit“ hodinu, ale naučit vás cvičit tak, aby vás to bavilo, dávalo smysl vašemu zdraví
+              a výsledky byly udržitelné.
+            </p>
+            <p>
+              Každý klient je pro mě individuální projekt – proto přizpůsobuji tréninkový plán vaší kondici, zkušenostem,
+              časovým možnostem i zdravotním omezením.
+            </p>
+
+            <div class="about-background-row" aria-label="Sportovní minulost">
+              <div class="about-card">
+                <strong>10 let</strong>
+                fotbal · práce s rychlostí, obratností a kondicí.
+              </div>
+              <div class="about-card">
+                <strong>5 let</strong>
+                gymnastika · vnímání těla, koordinace a technika pohybu.
+              </div>
+              <div class="about-card">
+                <strong>6 let</strong>
+                fitness · síla, estetika postavy a zdravé návyky v posilovně.
+              </div>
+            </div>
+          </div>
+
+          <div class="about-photo" aria-hidden="true">
+            <div class="about-photo-inner">
+              <img src="images/foto-2.png" alt="Daniel Holler - osobní trenér" loading="lazy" />
+            </div>
+            <div class="about-tag">
+              <span class="about-tag-dot"></span>
+              Certifikovaný instruktor fitness
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: SLUŽBY -->
+      <section id="services" class="section" aria-labelledby="services-title">
+        <div class="section-header">
+          <div class="section-label">Služby</div>
+          <h2 id="services-title" class="section-title">Co pro vás můžeme společně vybudovat.</h2>
+          <p class="section-subtitle">
+            Tréninky stavím na kombinaci síly, mobility a zdravé techniky. Vše přizpůsobené vaší startovní pozici a cíli.
+          </p>
+        </div>
+
+        <div class="cards-grid" role="list">
+          <article class="service-card" role="listitem">
+            <div class="service-icon">1:1</div>
+            <h3 class="service-title">Osobní trénink (1 na 1)</h3>
+            <p class="service-desc">
+              Individuální vedení v posilovně Max Fitness Dejvice. Detailní korekce techniky a jasný plán pro každý trénink.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon">Δ</div>
+            <h3 class="service-title">Transformace postavy</h3>
+            <p class="service-desc">
+              Kompletní změna postavy – od analýzy výchozího stavu až po nastavování návyků, které vydrží i po skončení spolupráce.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon">–kg</div>
+            <h3 class="service-title">Hubnutí a rýsování</h3>
+            <p class="service-desc">
+              Udržitelný úbytek tuku bez extrémních diet. Důraz na techniku, tempo a vhodnou skladbu tréninku.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon">+kg</div>
+            <h3 class="service-title">Nabírání svalové hmoty</h3>
+            <p class="service-desc">
+              Systematický silový trénink s důrazem na progres a správnou techniku základních i pokročilých cviků.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">Kondiční trénink</h3>
+            <p class="service-desc">
+              Zlepšení fyzičky pro sport i běžný život. Kombinace silových, intervalových a stabilizačních prvků.
+            </p>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon">↺</div>
+            <h3 class="service-title">Návrat do formy po pauze</h3>
+            <p class="service-desc">
+              Bezpečný restart tréninku po delší pauze, zranění nebo náročném období. Postupné navyšování zátěže.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 4: JAK PROBÍHÁ SPOLUPRÁCE -->
+      <section id="process" class="section" aria-labelledby="process-title">
+        <div class="section-header">
+          <div class="section-label">Jak probíhá spolupráce</div>
+          <h2 id="process-title" class="section-title">Jasná struktura od prvního kontaktu po výsledky.</h2>
+          <p class="section-subtitle">
+            Chci, abyste přesně věděli, co vás čeká. Společně nastavíme realistické cíle a konkrétní kroky, jak se k nim dostat.
+          </p>
+        </div>
+
+        <div class="timeline" aria-label="Kroky spolupráce">
+          <div class="timeline-step">
+            <div class="timeline-index">01 · První kontakt</div>
+            <div class="timeline-title">Krátká nezávazná konzultace</div>
+            <p class="timeline-text">
+              Vyplníte kontaktní formulář a stručně popíšete svůj cíl. Domluvíme si termín úvodního setkání v Max Fitness Dejvice.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-index">02 · Konzultace a diagnostika</div>
+            <div class="timeline-title">Zhodnocení výchozího stavu</div>
+            <p class="timeline-text">
+              Probereme váš zdravotní stav, dosavadní zkušenosti s pohybem a očekávání. Zároveň zhodnotíme držení těla a základní pohybové vzory.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-index">03 · Tréninkový plán</div>
+            <div class="timeline-title">Strategie na míru</div>
+            <p class="timeline-text">
+              Připravím pro vás strukturovaný tréninkový plán, který respektuje vaše možnosti, čas, regeneraci i případná omezení.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-index">04 · Pravidelné tréninky</div>
+            <div class="timeline-title">Práce na výsledcích</div>
+            <p class="timeline-text">
+              Společně trénujeme, průběžně vyhodnocujeme pokrok a upravujeme plán tak, aby vás posouval dál a dlouhodobě bavil.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: PROČ SI VYBRAT MĚ -->
+      <section id="why-me" class="section" aria-labelledby="why-title">
+        <div class="section-header">
+          <div class="section-label">Proč si vybrat mě</div>
+          <h2 id="why-title" class="section-title">Multidisciplinární přístup, který spojuje sílu, mobilitu i zdraví.</h2>
+          <p class="section-subtitle">
+            Nesázím na univerzální šablony. Každý plán vychází z vaší reality – fyzické, časové i psychické.
+          </p>
+        </div>
+
+        <ul class="reasons-list">
+          <li class="reason-item">
+            <div class="reason-check">✓</div>
+            <div>
+              <strong>Multidisciplinární přístup (síla + mobilita)</strong><br />
+              Kombinuji prvky silového tréninku, mobility, gymnastiky i funkčního pohybu tak, aby tělo bylo nejen silné, ale i odolné a mobilní.
+            </div>
+          </li>
+          <li class="reason-item">
+            <div class="reason-check">✓</div>
+            <div>
+              <strong>Individuální strategie pro každého</strong><br />
+              Plán přizpůsobuji vaší kondici, zkušenostem, zdravotním omezením i tomu, kolik času můžete tréninku reálně věnovat.
+            </div>
+          </li>
+          <li class="reason-item">
+            <div class="reason-check">✓</div>
+            <div>
+              <strong>Certifikovaná odbornost a výsledky</strong><br />
+              Mám za sebou desítky klientů s reálnými změnami postavy, výkonnosti i zdraví zad – díky důrazu na techniku a konzistenci.
+            </div>
+          </li>
+        </ul>
+
+        <div class="badge-row">
+          <div class="badge"><strong>Max Fitness Dejvice</strong> · moderní vybavení</div>
+          <div class="badge">Praha 6 · výborná dostupnost MHD</div>
+          <div class="badge">Bezpečný a udržitelný progres</div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: REFERENCE KLIENTŮ -->
+      <section id="testimonials" class="section" aria-labelledby="testimonials-title">
+        <div class="section-header">
+          <div class="section-label">Reference klientů</div>
+          <h2 id="testimonials-title" class="section-title">Skutečné příběhy klientů, ne jen fotky „před a po“.</h2>
+          <p class="section-subtitle">
+            Důraz na techniku, zdraví a dlouhodobou udržitelnost přináší výsledky, které dává smysl udržet.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p class="testimonial-quote">
+              „Oceňuji důraz na techniku. Díky gymnastické průpravě mě Dan naučil vnímat svaly správně.“
+            </p>
+            <div class="testimonial-name">Marek, <span class="testimonial-age">32 let</span></div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p class="testimonial-quote">
+              „Shodila jsem 8 kilo a cítím se mnohem silnější. Daniel mě dokáže motivovat i v těžké dny.“
+            </p>
+            <div class="testimonial-name">Lucie, <span class="testimonial-age">28 let</span></div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p class="testimonial-quote">
+              „Bolesti zad ze sezení zmizely. Moje fyzička je teď lepší než ve dvaceti.“
+            </p>
+            <div class="testimonial-name">Petr, <span class="testimonial-age">45 let</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 7: GALERIE -->
+      <section id="gallery" class="section" aria-labelledby="gallery-title">
+        <div class="section-header">
+          <div class="section-label">Galerie</div>
+          <h2 id="gallery-title" class="section-title">Jak vypadá trénink v praxi.</h2>
+          <p class="section-subtitle">
+            Reálné fotky z tréninků a prostředí Max Fitness Dejvice – žádné umělé obrázky, ale skutečná práce v posilovně.
+          </p>
+        </div>
+
+        <div class="gallery-section">
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img src="images/foto-3.png" alt="Trénink v praxi – ukázka z posilovny" loading="lazy" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="images/foto-4.png" alt="Trénink v praxi – atmosféra a technika" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: LOKALITA -->
+      <section id="location" class="section" aria-labelledby="location-title">
+        <div class="location-grid">
+          <div>
+            <div class="section-header">
+              <div class="section-label">Lokalita</div>
+              <h2 id="location-title" class="section-title">Tréninky v Max Fitness Dejvice, Praha 6.</h2>
+              <p class="section-subtitle">
+                Cvičíme v moderně vybaveném fitness centru s výbornou dostupností u stanice metra Dejvická.
+                Ideální místo pro ranní i večerní tréninky.
+              </p>
+            </div>
+            <p class="muted mt-8">
+              Adresa: <strong>Max Fitness Dejvice, Praha 6</strong><br />
+              Pár minut chůze od metra <strong>Dejvická</strong>. V okolí najdete také parkování a plnou občanskou vybavenost.
+            </p>
+            <div class="badge-row mt-8">
+              <div class="badge">Moderní stroje a činky</div>
+              <div class="badge">Prostor pro funkční trénink</div>
+              <div class="badge">Skvělé zázemí pro klienty</div>
+            </div>
+          </div>
+
+          <div class="location-map" aria-label="Mapa Max Fitness Dejvice, Praha 6">
+            <!-- Můžete později nahradit vlastním mapovým embed kódem -->
+            <iframe
+              title="Max Fitness Dejvice, Praha 6 - mapa"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.966655689973!2d14.389!3d50.104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2sDejvice%20Praha!5e0!3m2!1scs!2scz!4v1700000000000">
+            </iframe>
+            <div class="map-overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: KONTAKT -->
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="section-header" style="text-align: center;">
+          <div class="section-label">Kontakt</div>
+          <h2 id="contact-title" class="section-title">Připraveni začít? Napište mi.</h2>
+          <p class="section-subtitle" style="margin-inline: auto;">
+            Vyplňte krátký formulář a domluvíme si <strong>úvodní konzultaci zdarma</strong> v Max Fitness Dejvice. Ozvu se vám co nejdříve.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <form class="contact-form" action="mailto:vas-email@domena.cz" method="post">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Jméno</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Jan Novák" required />
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input class="input" type="email" id="email" name="email" placeholder="vas@email.cz" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input class="input" type="tel" id="phone" name="phone" placeholder="+420 ..." required />
+              </div>
+              <div class="field">
+                <label for="goal">Hlavní cíl</label>
+                <select class="select" id="goal" name="goal" required>
+                  <option value="" disabled selected>Vyberte cíl</option>
+                  <option value="hubnuti">Hubnutí a rýsování</option>
+                  <option value="svaly">Nabírání svalové hmoty</option>
+                  <option value="kondice">Zlepšení kondice</option>
+                  <option value="zada">Zdravá záda a pohyb</option>
+                  <option value="navrat">Návrat do formy po pauze</option>
+                  <option value="jine">Jiné / kombinace</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Stručně mi napište, s čím vám mohu pomoci <span>(nepovinné)</span></label>
+              <textarea class="input" id="message" name="message" rows="3" placeholder="Např. chci zhubnout 5–10 kg, zlepšit kondici a přestat mít bolesti zad."></textarea>
+            </div>
+
+            <div class="contact-submit-row">
+              <button type="submit" class="btn-primary">
+                Odeslat nezávaznou poptávku
+              </button>
+              <span class="muted" style="font-size: 11px;">
+                Odesláním souhlasíte s kontaktováním zpět ohledně tréninků.
+              </span>
+            </div>
+
+            <div class="contact-footer">
+              <div class="contact-social">
+                <div class="insta-icon">IG</div>
+                <div>
+                  Sledujte mě na Instagramu<br />
+                  <a href="https://www.instagram.com/danielholler_fitness" target="_blank" rel="noopener noreferrer">
+                    @danielholler_fitness
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Daniel Holler · Osobní trenér · Max Fitness Dejvice, Praha 6
+  </footer>
+
+  <script>
+    // Aktuální rok ve footeru
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobilní menu
+    (function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (!toggle || !mobileNav) return;
+
+      function setOpen(open) {
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.contains('nav-open');
+        setOpen(!isOpen);
+      });
+
+      mobileNav.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (a) setOpen(false);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 860px)').matches) setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
